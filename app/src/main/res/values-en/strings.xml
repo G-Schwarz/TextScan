@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Text to scan</string>
+    <string name="ketqua">Result</string>
+    <string name="doc">Speak</string>
+    <string name="dung">Stop</string>
+    <string name="hinhanhxemtruoc">Image preview</string>
+    <string name="xong">FINISH</string>
+    <string name="luu">Save</string>
+    <string name="chinhsua">Edit</string>
+    <string name="ngonngu">Language</string>
+    <string name="mainHint">Click the image button to add image</string>
+    <string name="nhaptext">Please enter text</string>
+    <string name="khongdoc">Not reading</string>
+    <string name="tenfile">File name</string>
+    <string name="dcluu">The file is saved to internal memory</string>
+    <string name="huytext">Cancle</string>
+    <string name="chonngonngu">Choose language</string>
+    <string name="daluufile">File saved!</string>
+    <string name="khongtimthayfile">File not found!</string>
+    <string name="loiluufile">Error saving file!</string>
+    <string name="mayanh">Camera</string>
+    <string name="thuvien">Gallery</string>
+    <string name="chonnguonanh">Choose image source</string>
+    <string name="deniedrequest">Request denied</string>
+</resources>

@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">Quét văn bản</string>
+    <string name="ketqua">Kết quả</string>
+    <string name="doc">Đọc</string>
+    <string name="dung">Dừng</string>
+    <string name="hinhanhxemtruoc">Hình ảnh xem trước</string>
+    <string name="xong">XONG</string>
+    <string name="luu">Lưu</string>
+    <string name="chinhsua">Chỉnh sửa</string>
+    <string name="ngonngu">Ngôn ngữ</string>
+    <string name="mainHint">Nhấn nút hình ảnh để thêm hình</string>
+    <string name="nhaptext">Xin vui lòng nhập text</string>
+    <string name="khongdoc">Không đọc</string>
+    <string name="tenfile">Tên file</string>
+    <string name="dcluu">File được lưu vào bộ nhớ trong</string>
+    <string name="huytext">Huỷ</string>
+    <string name="chonngonngu">Chọn ngôn ngữ</string>
+    <string name="daluufile">Đã lưu file!</string>
+    <string name="khongtimthayfile">Không tìm thấy file!</string>
+    <string name="loiluufile">Lỗi lưu file!</string>
+    <string name="mayanh">Máy ảnh</string>
+    <string name="thuvien">Bộ sưu tập</string>
+    <string name="chonnguonanh">Chọn nguồn hình ảnh</string>
+    <string name="deniedrequest">yêu cầu bị từ chối</string>
+</resources>

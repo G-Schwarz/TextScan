@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/colorPrimary"
+    android:elevation="4dp">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent">
+
+       <ImageView
+           android:id="@+id/bold"
+           android:layout_centerVertical="true"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:src="@drawable/ic_bold"
+           />
+
+        <ImageView
+            android:id="@+id/italic"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@+id/bold"
+            android:layout_marginLeft="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_italic"/>
+
+        <ImageView
+            android:id="@+id/underline"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@+id/italic"
+            android:layout_marginLeft="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_underline"/>
+
+        <ImageView
+            android:id="@+id/strikethrough"
+            android:layout_marginLeft="10dp"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@+id/underline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_strikethrough"/>
+
+            <!--
+            <ImageView
+            android:id="@+id/normalize"
+            android:layout_marginLeft="10dp"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@+id/strikethrough"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_normal"/>
+            -->
+
+        <Button
+            android:id="@+id/finish"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:text="@string/xong"
+            android:textSize="24dp"
+            android:textColor="@color/cardview_light_background"
+            android:background="@color/colorPrimary"
+            android:layout_marginRight="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            />
+
+
+    </RelativeLayout>
+
+
+</androidx.appcompat.widget.Toolbar>

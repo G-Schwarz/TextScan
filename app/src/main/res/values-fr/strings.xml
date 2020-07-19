@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Texte à numériser</string>
+    <string name="ketqua">Résultat</string>
+    <string name="doc">Parler</string>
+    <string name="dung">Arrêtez</string>
+    <string name="hinhanhxemtruoc">Aperçu d\'image</string>
+    <string name="xong">TERMINER</string>
+    <string name="luu">sauvegarder</string>
+    <string name="chinhsua">Éditer</string>
+    <string name="ngonngu">Langue</string>
+    <string name="mainHint">Cliquez sur le bouton image pour ajouter une image</string>
+    <string name="nhaptext">Veuillez saisir du texte</string>
+    <string name="khongdoc">Ne pas lire</string>
+    <string name="tenfile">Nom de fichier</string>
+    <string name="dcluu">Le fichier est enregistré dans la mémoire interne</string>
+    <string name="huytext">Annuler</string>
+    <string name="chonngonngu">Choisissez la langue</string>
+    <string name="daluufile">Fichier enregistré!</string>
+    <string name="khongtimthayfile">Fichier non trouvé!</string>
+    <string name="loiluufile">Erreur lors de l\'enregistrement du fichier!</string>
+    <string name="mayanh">Caméra</string>
+    <string name="thuvien">Galerie</string>
+    <string name="chonnguonanh">Choisissez la source de l\'image</string>
+    <string name="deniedrequest">Demande refusée</string>
+</resources>
