@@ -188,7 +188,7 @@ public class MainActivity extends AppCompatActivity {
             startActivityForResult(intent, 1);
         }
         if (id==R.id.files){
-            Uri selectedUri = Uri.parse(Environment.getExternalStorageDirectory()+File.separator+"MyScannedFiles");
+            Uri selectedUri = Uri.parse(Environment.getExternalStorageDirectory() + "MyScannedFiles");
             Intent intent = new Intent(Intent.ACTION_VIEW);
             intent.setDataAndType(selectedUri, "resource/folder");
 
