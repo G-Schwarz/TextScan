@@ -188,19 +188,10 @@ public class MainActivity extends AppCompatActivity {
             startActivityForResult(intent, 1);
         }
         if (id==R.id.files){
-            Uri selectedUri = Uri.parse(Environment.getExternalStorageDirectory() + "MyScannedFiles");
+            String Path = Environment.getExternalStorageDirectory()+File.separator+"MyScannedFiles";
             Intent intent = new Intent(Intent.ACTION_VIEW);
-            intent.setDataAndType(selectedUri, "resource/folder");
-
-            if (intent.resolveActivityInfo(getPackageManager(), 0) != null)
-            {
-                startActivity(intent);
-            }
-            else
-            {
-                // if you reach this place, it means there is no any file
-                // explorer app installed on your device
-            }
+            Uri mydir = Uri.parse("file://" + Path);
+            intent.setDataAndType(mydir, "*/*");
         }
         if(id==R.id.languages) {
             showChangeLanguageDialog();
@@ -283,7 +274,9 @@ public class MainActivity extends AppCompatActivity {
                 Log.d("MyApp", "No SDCARD");
             } else {
                 File directory = new File(Environment.getExternalStorageDirectory()+File.separator+"MyScannedFiles");
-                directory.mkdirs();
+                if (!directory.exists()) {
+                    directory.mkdirs();
+                }
             }
         }
 
