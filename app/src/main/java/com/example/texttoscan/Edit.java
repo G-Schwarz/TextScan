@@ -44,11 +44,11 @@ public class Edit extends AppCompatActivity {
         getSupportActionBar().setDefaultDisplayHomeAsUpEnabled(true);
 
         Intent intent = getIntent();
-        String text = intent.getStringExtra(MainActivity.EXTRA_TEXT);
+        String text = intent.getStringExtra(HomeActivity.EXTRA_TEXT);
 
 
         textEdit = findViewById(R.id.editText);
-        textEdit.setText(text);
+        //textEdit.setText(text);
 
         ImageView eBold;
         ImageView eItalic;

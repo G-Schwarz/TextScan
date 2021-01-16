@@ -9,6 +9,7 @@
     <string name="luu">Save</string>
     <string name="chinhsua">Edit</string>
     <string name="ngonngu">Language</string>
+    <string name="caidat">Setting</string>
     <string name="mainHint">Click the image button to add image</string>
     <string name="nhaptext">Please enter text</string>
     <string name="khongdoc">Not reading</string>

@@ -9,6 +9,7 @@
     <string name="luu">セーブ</string>
     <string name="chinhsua">編集</string>
     <string name="ngonngu">言語</string>
+    <string name="caidat">セーブ</string>
     <string name="mainHint">画像ボタンをクリックして画像を追加します</string>
     <string name="nhaptext">テキストを入力してください</string>
     <string name="khongdoc">読んでいない</string>

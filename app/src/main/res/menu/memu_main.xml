@@ -22,4 +22,7 @@
     <item
         android:id="@+id/languages"
         android:title="@string/ngonngu" />
+    <item
+        android:id="@+id/setting"
+        android:title="@string/caidat" />
 </menu>
