@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">Quét văn bản</string>
-    <string name="ketqua">Kết quả</string>
+    <string name="ketqua">KẾT QUẢ</string>
     <string name="doc">Đọc</string>
     <string name="dung">Dừng</string>
     <string name="hinhanhxemtruoc">Hình ảnh xem trước</string>

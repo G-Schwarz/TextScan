@@ -54,6 +54,7 @@ public class HomeActivity extends AppCompatActivity {
     public static final String EXTRA_TEXT = "EDIT_TEXT";
 
     EditText mResultET;
+    TextView mResult;
     ImageView mPreviewIV;
     Button mSpeakBtn, mStopBtn;
     TextToSpeech mTTS;
@@ -86,7 +87,9 @@ public class HomeActivity extends AppCompatActivity {
         mPreviewIV=findViewById(R.id.ImageIV);
         mSpeakBtn=findViewById(R.id.speakBtn);
         mStopBtn=findViewById(R.id.stopBtn);
-
+        mResult=findViewById(R.id.result);
+        mStopBtn.setVisibility(View.GONE);
+        mSpeakBtn.setVisibility(View.VISIBLE);
 
         mTTS = new TextToSpeech(getApplicationContext(), new TextToSpeech.OnInitListener() {
             @Override
@@ -96,7 +99,7 @@ public class HomeActivity extends AppCompatActivity {
                     mTTS.setLanguage(Locale.US);
                 }
                 else {
-                    Toast.makeText(HomeActivity.this, "Error", Toast.LENGTH_SHORT).show();
+                    //Toast.makeText(HomeActivity.this, "Error", Toast.LENGTH_SHORT).show();
                 }
             }
         });
@@ -104,7 +107,10 @@ public class HomeActivity extends AppCompatActivity {
         //Speak button Clicked
         mSpeakBtn.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
+            public void onClick(View v)
+            {
+                mStopBtn.setVisibility(View.VISIBLE);
+                mSpeakBtn.setVisibility(View.GONE);
                 //get text from edit text
                 String toSpeak = mResultET.getText().toString().trim();
                 if (toSpeak.equals("")){
@@ -121,7 +127,11 @@ public class HomeActivity extends AppCompatActivity {
         //Stop button Clicked
         mStopBtn.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
+            public void onClick(View v)
+            {
+
+                mSpeakBtn.setVisibility(View.VISIBLE);
+                mStopBtn.setVisibility(View.GONE);
                 if (mTTS.isSpeaking()){
                     //if is speaking then stop
                     mTTS.stop();
@@ -133,7 +143,23 @@ public class HomeActivity extends AppCompatActivity {
             }
         });
 
+        mResult.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v)
+            {
 
+                //get text from edit text
+                String toSpeak = mResultET.getText().toString().trim();
+                if (toSpeak.equals("")){
+                    //if there is no text in the result
+                    Toast.makeText(HomeActivity.this, R.string.nhaptext, Toast.LENGTH_SHORT).show();
+                }
+                else {
+                    //Speak the text
+                    mTTS.speak(toSpeak, TextToSpeech.QUEUE_FLUSH, null);
+                }
+            }
+        });
         //camera permission
         cameraPermission=new String[]{Manifest.permission.CAMERA, Manifest.permission.WRITE_EXTERNAL_STORAGE};
 

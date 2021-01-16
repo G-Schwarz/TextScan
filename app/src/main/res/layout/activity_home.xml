@@ -47,7 +47,8 @@
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:cardBackgroundColor="#fff"
+
+                app:cardBackgroundColor="#FF7EA9FF"
                 app:cardUseCompatPadding="true"
                 app:cardCornerRadius="3dp"
                 app:cardElevation="3dp">
@@ -55,21 +56,30 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
-                    android:padding="5dp">
+                    android:padding="5dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:background="#FF7EA9FF">
+
                     <TextView
+                        android:id="@+id/result"
                         android:text="@string/ketqua"
-                        android:textColor="@color/colorPrimary"
-                        android:textSize="25sp"
+                        android:textColor="#ffffff"
+                        android:textSize="15sp"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"/>
+                        android:layout_height="wrap_content"
+                        android:drawableLeft="@drawable/ic_speak"
+                        android:drawablePadding="10dp"/>
 
                     <EditText
                         android:id="@+id/ResultET"
+
                         android:hint=""
                         android:autoLink="all"
+                        android:textSize="25sp"
                         android:background="@null"
                         android:padding="5sp"
-                        android:textColor="#000"
+                        android:textColor="#FFFFFF"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"/>
 
@@ -79,26 +89,44 @@
 
             <RelativeLayout
                 android:layout_width="wrap_content"
-                android:layout_height="match_parent">
-                <Button
-                    android:id="@+id/speakBtn"
-                    style="@style/Widget.AppCompat.Button.Colored"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:drawableLeft="@drawable/ic_speak"
-                    android:drawablePadding="5dp"
-                    android:text="@string/doc" />
+                android:layout_height="match_parent"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp">
+
 
                 <Button
+
+
+                    android:id="@+id/speakBtn"
+                    android:textColor="#FF7EA9FF"
+                    style="@style/Widget.AppCompat.Button.Colored"
+                    android:layout_width="80dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentLeft="true"
+                    android:background="@drawable/rounded_corners"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginEnd="240dp"
+
+                    android:text="@string/doc" />
+
+
+                <Button
+
                     android:id="@+id/stopBtn"
                     style="@style/Widget.AppCompat.Button.Colored"
-                    android:layout_width="wrap_content"
+                    android:textColor="#ffffff"
+                    android:layout_width="80dp"
                     android:layout_height="wrap_content"
+                    android:background="@drawable/selected_rounded_corners"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentRight="true"
                     android:layout_alignParentEnd="true"
-                    android:drawableLeft="@drawable/ic_stop"
-                    android:drawablePadding="5dp"
-                    android:text="@string/dung"
-                    android:layout_alignParentRight="true" />
+                    android:layout_marginEnd="240dp"
+
+                    android:text="@string/dung" />
             </RelativeLayout>
 
 
