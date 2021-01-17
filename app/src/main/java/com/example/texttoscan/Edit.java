@@ -48,7 +48,7 @@ public class Edit extends AppCompatActivity {
 
 
         textEdit = findViewById(R.id.editText);
-        //textEdit.setText(text);
+        textEdit.setText(text);
 
         ImageView eBold;
         ImageView eItalic;

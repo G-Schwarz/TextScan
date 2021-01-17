@@ -32,7 +32,9 @@ import android.view.View;
 import android.view.inputmethod.EditorInfo;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -58,6 +60,10 @@ public class HomeActivity extends AppCompatActivity {
     ImageView mPreviewIV;
     Button mSpeakBtn, mStopBtn;
     TextToSpeech mTTS;
+    ImageView mAddImg;
+    ImageButton mAddBtn, mEdit;
+    ScrollView mHome;
+
 
     private static final int CAMERA_REQUEST_CODE =200;
     private static final int STORAGE_REQUEST_CODE =400;
@@ -82,14 +88,23 @@ public class HomeActivity extends AppCompatActivity {
 
         ActionBar actionBar1 = getSupportActionBar();
         actionBar1.setTitle(getResources().getString(R.string.app_name));
+        actionBar1.setElevation(0);
 
         mResultET=findViewById(R.id.ResultET);
         mPreviewIV=findViewById(R.id.ImageIV);
         mSpeakBtn=findViewById(R.id.speakBtn);
         mStopBtn=findViewById(R.id.stopBtn);
         mResult=findViewById(R.id.result);
+        mHome = findViewById(R.id.mainhome);
+        mAddBtn=findViewById(R.id.addImg);
+        mEdit = findViewById(R.id.EditResult);
+
+
+        mAddBtn.setVisibility(View.VISIBLE);
+        mHome.setVisibility(View.GONE);
         mStopBtn.setVisibility(View.GONE);
         mSpeakBtn.setVisibility(View.VISIBLE);
+
 
         mTTS = new TextToSpeech(getApplicationContext(), new TextToSpeech.OnInitListener() {
             @Override
@@ -160,6 +175,23 @@ public class HomeActivity extends AppCompatActivity {
                 }
             }
         });
+        mAddBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v)
+            {
+                showImageImportDialog();
+
+            }
+        });
+
+        mEdit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v)
+            {
+
+               
+            }
+        });
         //camera permission
         cameraPermission=new String[]{Manifest.permission.CAMERA, Manifest.permission.WRITE_EXTERNAL_STORAGE};
 
@@ -222,9 +254,12 @@ public class HomeActivity extends AppCompatActivity {
         if(id==R.id.languages) {
             showChangeLanguageDialog();
         }
+        if(id==R.id.setting) {
+            showChangeLanguageDialog();
+        }
         return super.onOptionsItemSelected(item);
     }
-
+    //Language
     private void showChangeLanguageDialog() {
         //array of language to display in alert dialog
         final String[] listItems = {"English", "French", "日本語", "한국어", "Tiếng Việt"};
@@ -287,7 +322,7 @@ public class HomeActivity extends AppCompatActivity {
         setLocale(Language);
     }
 
-
+    //Save
     private void saveTextAsFile(String filename, String content){
         String Filename = filename + ".html";
 
@@ -346,6 +381,7 @@ public class HomeActivity extends AppCompatActivity {
                     else {
                         //Da cho phep may anh
                         pickCamera();
+
                     }
                 }
                 if(which==1){
@@ -357,6 +393,8 @@ public class HomeActivity extends AppCompatActivity {
                     else {
                         //Da cho phep thu vien anh
                         pickGallery();
+                        mAddBtn.setVisibility(View.GONE);
+                        mHome.setVisibility(View.VISIBLE);
                     }
                 }
             }
@@ -383,6 +421,9 @@ public class HomeActivity extends AppCompatActivity {
         Intent cameraIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
         cameraIntent.putExtra(MediaStore.EXTRA_OUTPUT, image_uri);
         startActivityForResult(cameraIntent, IMAGE_PICK_CAMERA_CODE);
+
+        mAddBtn.setVisibility(View.GONE);
+        mHome.setVisibility(View.VISIBLE);
     }
 
     private void requestStoragePermission() {

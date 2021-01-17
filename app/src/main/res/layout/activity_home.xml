@@ -6,82 +6,125 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:gravity="center_horizontal"
+    android:background="@color/colorPrimary"
     tools:context=".MainActivity">
 
-    <ScrollView
+
+    <ImageButton
+        android:id="@+id/addImg"
+
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="match_parent"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+
+        android:background="#FFFFFF"
+        android:gravity="center"
+        android:scaleType="fitCenter"
+        android:src="@drawable/ic_add_circle"
+        android:textColor="#000"
+        android:textSize="18sp"
+        android:tint="@color/colorPrimaryDark" />
+    <ScrollView
+        android:id="@+id/mainhome"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/ic_half_rounded_corners">
+
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:orientation="vertical">
 
 
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:cardBackgroundColor="#fff"
-                app:cardUseCompatPadding="true"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                app:cardBackgroundColor="@android:color/transparent"
                 app:cardCornerRadius="3dp"
-                app:cardElevation="3dp">
+                app:cardElevation="3dp"
+
+                app:cardUseCompatPadding="true">
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:background="@android:color/transparent"
                     android:orientation="vertical"
                     android:padding="5dp">
 
 
                     <ImageView
                         android:id="@+id/ImageIV"
+
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:maxHeight="250dp" />
+
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
-
-
-
-
 
 
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
 
-                app:cardBackgroundColor="#FF7EA9FF"
-                app:cardUseCompatPadding="true"
-                app:cardCornerRadius="3dp"
-                app:cardElevation="3dp">
+                app:cardBackgroundColor="@color/colorPrimary"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="3dp"
+                app:cardUseCompatPadding="true">
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:padding="5dp"
                     android:layout_marginTop="10dp"
                     android:layout_marginBottom="10dp"
-                    android:background="#FF7EA9FF">
+                    android:background="@color/colorPrimary"
+                    android:orientation="vertical"
+                    android:padding="5dp">
 
                     <TextView
                         android:id="@+id/result"
-                        android:text="@string/ketqua"
-                        android:textColor="#ffffff"
-                        android:textSize="15sp"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:drawableLeft="@drawable/ic_speak"
-                        android:drawablePadding="10dp"/>
+                        android:drawablePadding="10dp"
+                        android:paddingLeft="7dp"
+
+                        android:text="@string/ketqua"
+                        android:textColor="#ffffff"
+                        android:textSize="15sp" />
 
                     <EditText
                         android:id="@+id/ResultET"
 
-                        android:hint=""
-                        android:autoLink="all"
-                        android:textSize="25sp"
-                        android:background="@null"
-                        android:padding="5sp"
-                        android:textColor="#FFFFFF"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"/>
+                        android:layout_height="wrap_content"
+                        android:autoLink="all"
+                        android:background="@null"
+                        android:hint=""
+                        android:text=""
+                        android:padding="15sp"
+                        android:textColor="#FFFFFF"
+                        android:textSize="25sp" />
+
+
+                    <ImageButton
+                        android:id="@+id/EditResult"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentBottom="true"
+                        android:layout_gravity="right"
+                        android:background="@color/colorPrimary"
+                        android:gravity="right"
+                        android:padding="5sp"
+                        android:paddingRight="15dp"
+                        android:src="@drawable/ic_edit"
+                        android:tint="#ffffff" />
+
 
                 </LinearLayout>
 
@@ -98,37 +141,36 @@
 
 
                     android:id="@+id/speakBtn"
-                    android:textColor="#FF7EA9FF"
                     style="@style/Widget.AppCompat.Button.Colored"
                     android:layout_width="80dp"
                     android:layout_height="wrap_content"
                     android:layout_alignParentStart="true"
                     android:layout_alignParentLeft="true"
-                    android:background="@drawable/rounded_corners"
-                    android:layout_alignParentRight="true"
                     android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
                     android:layout_marginEnd="240dp"
+                    android:background="@drawable/rounded_corners"
+                    android:text="@string/doc"
 
-                    android:text="@string/doc" />
+                    android:textColor="@color/colorPrimary" />
 
 
                 <Button
 
                     android:id="@+id/stopBtn"
                     style="@style/Widget.AppCompat.Button.Colored"
-                    android:textColor="#ffffff"
                     android:layout_width="80dp"
                     android:layout_height="wrap_content"
-                    android:background="@drawable/selected_rounded_corners"
                     android:layout_alignParentStart="true"
                     android:layout_alignParentLeft="true"
-                    android:layout_alignParentRight="true"
                     android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
                     android:layout_marginEnd="240dp"
+                    android:background="@drawable/selected_rounded_corners"
+                    android:text="@string/dung"
 
-                    android:text="@string/dung" />
+                    android:textColor="#ffffff" />
             </RelativeLayout>
-
 
 
         </LinearLayout>

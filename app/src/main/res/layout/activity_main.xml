@@ -7,39 +7,34 @@
     android:layout_height="match_parent"
     android:gravity="center_horizontal"
     tools:context=".MainActivity"
-    android:background="@drawable/ic_bg"
+    android:background="@drawable/ic_main_background"
     >
 
 
     <ImageView
         android:id="@+id/imageView2"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="0dp"
-        android:layout_marginTop="82dp"
-        android:layout_marginEnd="0dp"
-        android:layout_marginBottom="537dp"
-        app:srcCompat="@drawable/ic_logo" />
+        android:layout_height="160dp"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:layout_gravity="center"
 
-    <TextView
-        android:id="@+id/Text2Scan"
-        android:layout_width="233dp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="88dp"
-        android:layout_marginEnd="89dp"
-        android:layout_marginBottom="463dp"
-        android:text="TEXT TO SCAN"
-        android:textAlignment="center"
-        android:textAllCaps="true"
-        android:textColor="#FFFFFF"
-        android:textSize="34sp" />
+        app:srcCompat="@drawable/ic_logo" />
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:gravity="center">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Aa"
+            android:textColor="#ffffff"
+            android:textSize="35dp"
+            android:textStyle="bold" />
+    </RelativeLayout>
+
+
 
 
 </RelativeLayout>
