@@ -1,0 +1,3 @@
+-Revised UI
+-Reworked save function - now worked on SAMSUNG DEVICES
+ADDED share Function.
