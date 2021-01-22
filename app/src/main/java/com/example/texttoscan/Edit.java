@@ -187,24 +187,12 @@ public class Edit extends AppCompatActivity {
                                     }
         );
 
-
-
-
-
-
-
-
-
-
-
-
-
         ecancel = findViewById(R.id.cancel);
         ecancel.setOnClickListener(new View.OnClickListener() {
                                         @Override
                                         public void onClick(View v) {
                                             Intent homeIntent = new Intent(Edit.this, HomeActivity.class);
-                                            startActivity(homeIntent);
+                                            setResult(RESULT_OK, homeIntent);
                                             finish();
                                         }
                                     }

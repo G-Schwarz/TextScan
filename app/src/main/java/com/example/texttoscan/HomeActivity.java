@@ -9,7 +9,10 @@ import androidx.core.content.ContextCompat;
 
 import android.Manifest;
 import android.app.AlertDialog;
+import android.content.ClipData;
+import android.content.ClipboardManager;
 import android.content.ContentValues;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -61,7 +64,7 @@ public class HomeActivity extends AppCompatActivity {
     Button mSpeakBtn, mStopBtn;
     TextToSpeech mTTS;
     ImageView mAddImg;
-    ImageButton mAddBtn, mEdit;
+    ImageButton mAddBtn, mEdit, mCopy, mShare;
     ScrollView mHome;
 
 
@@ -98,7 +101,8 @@ public class HomeActivity extends AppCompatActivity {
         mHome = findViewById(R.id.mainhome);
         mAddBtn=findViewById(R.id.addImg);
         mEdit = findViewById(R.id.EditResult);
-
+        mCopy = findViewById(R.id.copy);
+        mShare = findViewById(R.id.share);
 
         mAddBtn.setVisibility(View.VISIBLE);
         mHome.setVisibility(View.GONE);
@@ -197,6 +201,41 @@ public class HomeActivity extends AppCompatActivity {
                
             }
         });
+        mCopy.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v)
+            {
+                EditText editText = findViewById(R.id.ResultET);
+                String text = editText.getText().toString();
+
+                if (text !="")
+                {
+                    ClipboardManager clipboard = (ClipboardManager) getSystemService(Context.CLIPBOARD_SERVICE);
+                    ClipData clipData = ClipData.newPlainText("edittext", text );
+                    clipboard.setPrimaryClip(clipData);
+
+                    Toast.makeText(HomeActivity.this, "Copied", Toast.LENGTH_SHORT).show();
+                }
+                else Toast.makeText(HomeActivity.this, "Nothing to copy", Toast.LENGTH_SHORT).show();
+
+            }
+        });
+
+        mShare.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v)
+            {
+                EditText editText = findViewById(R.id.ResultET);
+                String text = editText.getText().toString();
+
+                Intent shareIntent = new Intent(Intent.ACTION_SEND);
+                shareIntent.setType("text/plain");
+                shareIntent.putExtra(Intent.EXTRA_TEXT,text);
+                shareIntent.putExtra(Intent.EXTRA_SUBJECT, "Text Scan");
+                startActivity(Intent.createChooser(shareIntent, "Share..."));
+            }
+        });
+        
         //camera permission
         cameraPermission=new String[]{Manifest.permission.CAMERA, Manifest.permission.WRITE_EXTERNAL_STORAGE};
 
