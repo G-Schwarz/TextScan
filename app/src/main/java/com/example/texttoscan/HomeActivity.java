@@ -103,7 +103,7 @@ public class HomeActivity extends AppCompatActivity {
         mAddBtn.setVisibility(View.VISIBLE);
         mHome.setVisibility(View.GONE);
         mStopBtn.setVisibility(View.GONE);
-        mSpeakBtn.setVisibility(View.VISIBLE);
+        mSpeakBtn.setVisibility(View.GONE);
 
 
         mTTS = new TextToSpeech(getApplicationContext(), new TextToSpeech.OnInitListener() {
@@ -188,7 +188,12 @@ public class HomeActivity extends AppCompatActivity {
             @Override
             public void onClick(View v)
             {
+                EditText editText = findViewById(R.id.ResultET);
+                String text = editText.getText().toString();
 
+                Intent intent = new Intent(HomeActivity.this, Edit.class);
+                intent.putExtra(EXTRA_TEXT, text);
+                startActivityForResult(intent, 1);
                
             }
         });

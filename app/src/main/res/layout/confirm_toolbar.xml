@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/colorPrimary"
+    android:elevation="4dp">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_marginRight="12dp"
+        >
+
+        <ImageView
+            android:id="@+id/cancel"
+            android:layout_centerVertical="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/circle_red"
+            android:padding="6dp"
+            android:src="@drawable/ic_close"
+            android:tint="#ffffff"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="EDIT"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:textSize="24dp"
+            android:textColor="#ffffff"
+            android:textStyle="bold"
+            android:letterSpacing="0.1"
+            >
+
+        </TextView>
+        <ImageView
+            android:id="@+id/confirm"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+
+            android:layout_gravity="right"
+            android:background="@drawable/circle_yellow"
+            android:gravity="left"
+            android:layout_centerVertical="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:padding="6dp"
+            android:src="@drawable/ic_done"
+
+            />
+
+
+
+
+    </RelativeLayout>
+
+
+</androidx.appcompat.widget.Toolbar>

@@ -31,6 +31,7 @@ public class Edit extends AppCompatActivity {
     public String selectedText;
     public int textLength;
     Button efinish;
+    ImageView ecancel, econfirm;
 
 
     @Override
@@ -38,10 +39,7 @@ public class Edit extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_edit);
 
-        ActionBar actionBar = getSupportActionBar();
-        actionBar.setTitle(getResources().getString(R.string.chinhsua));
-
-        getSupportActionBar().setDefaultDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().hide();
 
         Intent intent = getIntent();
         String text = intent.getStringExtra(HomeActivity.EXTRA_TEXT);
@@ -56,6 +54,8 @@ public class Edit extends AppCompatActivity {
         ImageView eStrikethrough;
         ImageView eNormal;
 
+        efinish = findViewById(R.id.finish);
+        efinish.setVisibility(View.GONE);
         eBold = findViewById(R.id.bold);
         eItalic = findViewById(R.id.italic);
         eUnderline = findViewById(R.id.underline);
@@ -157,7 +157,7 @@ public class Edit extends AppCompatActivity {
             }
         });*/
 
-        efinish = findViewById(R.id.finish);
+
         efinish.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -169,7 +169,47 @@ public class Edit extends AppCompatActivity {
                 setResult(RESULT_OK, intent1);
                 finish();
             }
-        });
+        }
+        );
+
+        econfirm = findViewById(R.id.confirm);
+        econfirm.setOnClickListener(new View.OnClickListener() {
+                                        @Override
+                                        public void onClick(View v) {
+                                            EditText ResultText = findViewById(R.id.editText);
+                                            String returnText = ResultText.getText().toString();
+
+                                            Intent intent1 = new Intent();
+                                            intent1.putExtra("result", returnText);
+                                            setResult(RESULT_OK, intent1);
+                                            finish();
+                                        }
+                                    }
+        );
+
+
+
+
+
+
+
+
+
+
+
+
+
+        ecancel = findViewById(R.id.cancel);
+        ecancel.setOnClickListener(new View.OnClickListener() {
+                                        @Override
+                                        public void onClick(View v) {
+                                            Intent homeIntent = new Intent(Edit.this, HomeActivity.class);
+                                            startActivity(homeIntent);
+                                            finish();
+                                        }
+                                    }
+        );
+
 
     }
 

@@ -8,26 +8,42 @@
     android:gravity="center_horizontal"
     tools:context=".MainActivity">
 
-    <include
-        android:id="@+id/toolbar"
-        layout="@layout/toolbar"/>
-
-
-
-
-
     <ScrollView
-        android:layout_below="@+id/toolbar"
+        android:id="@+id/mainhome"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-        <EditText
-            android:id="@+id/editText"
+        android:layout_height="match_parent"
+        android:background="@drawable/ic_half_rounded_corners">
+
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:orientation="vertical">
 
-            android:background="@null"
-            android:textColor="#000"
-            />
+
+
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent">
+                <include
+                    android:id="@+id/confirm_toolbar"
+                    layout="@layout/confirm_toolbar"/>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent">
+                <include
+                    android:id="@+id/toolbar"
+                    layout="@layout/toolbar"/>
+            </RelativeLayout>
+            <EditText
+                android:id="@+id/editText"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="15dp"
+                android:background="#fff"
+                android:textColor="#000" />
+        </LinearLayout>
     </ScrollView>
-
 </RelativeLayout>
