@@ -290,10 +290,11 @@ public class HomeActivity extends AppCompatActivity {
             startActivityForResult(intent, 1);
         }
         if (id==R.id.files){
-            String Path = Environment.getExternalStorageDirectory()+File.separator+"MyScannedFiles";
-            Intent intent = new Intent(Intent.ACTION_VIEW);
-            Uri mydir = Uri.parse("file://" + Path);
-            intent.setDataAndType(mydir, "*/*");
+            openFolder();
+//            String Path = Environment.getExternalStorageDirectory()+File.separator+"MyScannedFiles";
+//            Intent intent = new Intent(Intent.ACTION_VIEW);
+//            Uri mydir = Uri.parse("file://" + Path);
+//            intent.setDataAndType(mydir, "*/*");
         }
         if(id==R.id.languages) {
             showChangeLanguageDialog();
@@ -404,6 +405,13 @@ public class HomeActivity extends AppCompatActivity {
             Toast.makeText(this, R.string.loiluufile, Toast.LENGTH_SHORT).show();
         }
 
+    }
+    //Open Folder
+    public void openFolder(){
+        Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
+        Uri uri = Uri.parse(Environment.getExternalStorageDirectory()+File.separator+"MyScannedFiles"+ File.separator);
+        intent.setDataAndType(uri, "text/csv");
+        startActivity(Intent.createChooser(intent, "Open folder"));
     }
 
     private void showImageImportDialog() {
