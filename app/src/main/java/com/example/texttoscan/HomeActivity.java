@@ -408,10 +408,12 @@ public class HomeActivity extends AppCompatActivity {
     }
     //Open Folder
     public void openFolder(){
-        Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
-        Uri uri = Uri.parse(Environment.getExternalStorageDirectory()+File.separator+"MyScannedFiles"+ File.separator);
-        intent.setDataAndType(uri, "text/csv");
-        startActivity(Intent.createChooser(intent, "Open folder"));
+        File path = new File(Environment.getExternalStorageDirectory()+File.separator+"MyScannedFiles");
+        Uri uri = Uri.fromFile(path);
+        Intent intent = getPackageManager().getLaunchIntentForPackage("com.sec.android.app.myfiles");
+        intent.setAction("samsung.myfiles.intent.action.LAUNCH_MY_FILES");
+        intent.putExtra("samsung.myfiles.intent.extra.START_PATH", path.getAbsolutePath());
+        startActivity(intent);
     }
 
     private void showImageImportDialog() {
